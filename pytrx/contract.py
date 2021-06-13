@@ -153,7 +153,7 @@ class Contract(object):
     def constructor(self) -> "ContractConstructor":
         """The constructor of the contract."""
         for method_abi in self.abi:
-            if method_abi['type'] == 'Constructor':
+            if method_abi['type'] == 'constructor':
                 return ContractConstructor(method_abi, self)
 
         raise NameError("Contract has no constructor")

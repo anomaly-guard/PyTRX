@@ -154,7 +154,7 @@ class AsyncContract(object):
     def constructor(self) -> "AsyncContractConstructor":
         """The constructor of the contract."""
         for method_abi in self.abi:
-            if method_abi['type'] == 'Constructor':
+            if method_abi['type'] == 'constructor':
                 return AsyncContractConstructor(method_abi, self)
 
         raise NameError("Contract has no constructor")
